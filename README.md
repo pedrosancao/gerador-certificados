@@ -1,6 +1,4 @@
-Gerador de Certificados
-
-====================
+#Gerador de Certificados
 
 Gerador de Certificados da UEB - (União dos Escoteiros do Brasil)
 
