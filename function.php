@@ -36,3 +36,14 @@ function login() {
 		header('Location: index.html');
 	}
 }
+
+function getUA() {
+	$ua = 'HTTP_USER_AGENT';
+	if (strpos($_SERVER[$ua], 'Mozilla') !== false && strpos($_SERVER[$ua], 'Firefox')) { # Mozilla Firefox
+		return 0;
+	} elseif (strpos($_SERVER[$ua], 'MSIE')) { # Internet Explorer - IE 11 strpos($_SERVER[$ua], 'Trident/7.0; rv:11.0')
+		return 1;
+	} else { # others
+		return 2;
+	};
+}

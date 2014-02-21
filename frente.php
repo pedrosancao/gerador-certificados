@@ -1,5 +1,5 @@
 ﻿<?php
-include_once 'login.php';
+include_once 'function.php';
 login();
 
 echo "
@@ -84,7 +84,7 @@ echo "
 	z-index:1;
 }";
 }
-elseif ($_GET["nav"]==1){
+elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') || strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE')){
 echo "
 #apDiv0 {
 	position:absolute;
