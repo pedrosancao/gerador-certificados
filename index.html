@@ -1,66 +1,43 @@
+﻿<!DOCTYPE html>
 <html>
-<head>
-<title>Gerador de Certificados - Grupo Escoteiro Aragua&ccedil;&uacute;</title>
-<style type="text/css">
-  .label{font-size:9pt;}
-</style>
-</head>
+	<head>
+		<title>Gerador de Certificados</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/default.css">
+	</head>
 
-<body bgcolor="#CCCCCC">
-<table border="0" cellpadding="0" cellspacing="0" width="300">
-  <tr>
-    <td>
-      <fieldset>
-      <legend style="color:#FFFFFF">Instru&ccedil;&otilde;es de uso&nbsp;</legend>
-        <div style="text-align:justify;">
-        Preencha todos os campos e clique no primeiro bot&atilde;o "Imprimir", coloque a folha de volta na impressora e clique no segundo bot&atilde;o.<br>
-        &Eacute; necess&aacute;rio instalar a fonte "Edwardian Script ITC" para que o Gerador de Certificados funcione, <a href="itcedscr.rar" style="text-decoration:none;color:#000066">clique aqui para baixar</a>.<br>
-        Para acessar &eacute; necess&aacute;rio usu&aacute;rio e senha.
-        </div>
-      </fieldset>
-<form action="index1.php" name="f1" method="post">
-      <fieldset>
-      <legend style="color:#FFFFFF">Login&nbsp;</legend>
-      <table border="0" cellpadding="0" cellspacing="10">
-      <tr>
-      <td>Usu&aacute;rio</td>
-      <td><input type="password" name="user" size="30"></td>
-      </tr>
-      <tr>
-      <td>Senha</td>
-      <td><input type="password" name="pass" size="30"></td>
-      </tr>
-      <tr>
-      <td colspan="2" align="center">
-        <table border="0" cellpadding="0" cellspacing="0" class="label" title="Escolha o navegador utilizado">
-          <tr>
-          <td><input type="radio" name="nav" value="ie" checked></td>
-          <td>Internet Explorer</td>
-          </tr>
-          <tr>
-          <td><input type="radio" name="nav" value="ff"></td>
-          <td>Mozilla Firefox</td>
-          </tr>
-          <tr>
-          <td><input type="radio" name="nav" value="gg"></td>
-          <td>Google Chrome</td>
-          </tr>
-        </table>
-      </td>
-      </tr>
-      <tr>
-      <td colspan="2" align="center"><input type="submit" name="go" value="Login" accesskey="Enter"></td>
-      </tr>
-      </table>
-      </fieldset>
-</form>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <input type="button" value="Voltar para o site" onClick="window.location='http://www.gearaguacu.com.br'">
-    </td>
-  </tr>
-</table>
-</body>
+	<body class="home">
+	    <div class="container">
+			<h1>Gerador de Certificados</h1>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Instruções de Uso</h3>
+				</div>
+				<div class="panel-body">
+					<p>Preencha todos os campos e clique no botão "Imprimir" do primeiro grupo, após impressão coloque a folha de volta na impressora e clique no segundo botão "Imprimir".</p>
+					<p>Para acessar é necessário usuário e senha.
+				</div>
+			</div>
+			<div class="panel panel-default login">
+				<div class="panel-heading">
+					<h3 class="panel-title">Login</h3>
+				</div>
+				<div class="panel-body">
+					<form action="index1.php" name="login" method="post">
+						<div class="form-group">
+							<label for="user">Usuário</label>
+							<input type="text" name="user" id="user" class="form-control" size="30" placeholder="Informe o usuário">
+						</div>
+						<div class="form-group">
+							<label for="pass">Senha</label>
+							<input type="password" name="pass" id="pass" class="form-control" size="30" placeholder="Informe a senha">
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-default" accesskey="Enter">Login</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
