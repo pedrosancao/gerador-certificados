@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if (
 	$_POST["user"]=="Pedro" And
 		sha1($_POST["pass"])=="HASH" Or
