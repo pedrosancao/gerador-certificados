@@ -19,14 +19,17 @@ login();
 				<div id="apDiv4" class="apDiv nowrap menor"><?php echo $_POST["ueb"]; ?></div>
 				<div id="apDiv5" class="apDiv nowrap menor text-left"><?php echo $_POST["city"]; ?>,</div>
 				<div id="apDiv6" class="apDiv nowrap menor text-right"><?php echo $_POST["dia"]; ?></div>
-				<div id="apDiv7" class="apDiv nowrap menor"><?php echo $_POST["mes"]; ?></div>
+				<div id="apDiv7" class="apDiv nowrap menor"><?php
+					$meses = meses();
+					echo isset($meses[$_POST["mes"]]) ? $meses[$_POST["mes"]] : '';
+				?></div>
 				<div id="apDiv8" class="apDiv nowrap menor"><?php echo $_POST["ano"]; ?></div>
 				<img src="frente.jpg" width="580"/>
 			</div>
 		</div>
-	<script language="javascript">
-	//window.print();
-	//document.setTimeout(function(){window.close()}, 100);
-	</script>
+		<script type="text/javascript">
+		window.print();
+		window.setTimeout(function(){window.close()}, 100);
+		</script>
 	</body>
 </html>
