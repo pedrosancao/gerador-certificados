@@ -1,4 +1,18 @@
-﻿body  {
+﻿@font-face {
+	font-family: 'Promocyja';
+	src: url('fonts/Promocyja096.ttf') format('trutype'), url('fonts/Promocyja_096.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Tangerine';
+	src: url('fonts/Tangerine_Regular.ttf') format('trutype');
+}
+@font-face {
+	font-family: 'Tangerine';
+	src: url('fonts/Tangerine_Bold.ttf') format('trutype');
+    font-weight: bold;	
+}
+
+body  {
 	padding-top: 20px;
 }
 h1 {
