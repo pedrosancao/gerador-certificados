@@ -1,0 +1,173 @@
+﻿@font-face {
+	font-family: 'Promocyja';
+	src: url('fonts/Promocyja_096.otf') format('opentype'), url('fonts/Promocyja096.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Tangerine';
+	src: url('fonts/Tangerine_Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Tangerine';
+	src: url('fonts/Tangerine_Bold.ttf') format('truetype');
+	font-weight: bold;	
+}
+
+body {
+	padding-top: 20px;
+}
+h1 {
+	margin-bottom: 20px;
+}
+.panel-small {
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+}
+.default-font {
+	font-family: Arial, Sans-serif;
+	font-size: 12pt;
+}
+.custom-font {
+	font-family: 'Promocyja', Calligraphy, Handwritten, Serif;
+	font-size: 25px;
+}
+.alt .custom-font {
+	font-family: 'Tangerine', Calligraphy, Handwritten, Serif;
+	font-size: 30px;
+}
+.default-font .caixas {
+	font-weight: bolder;
+	font-size: 18pt;
+	line-height: 24px;
+}
+.custom-font.menor,
+.custom-font .menor {
+	font-size: 21px;
+}
+.alt .custom-font.menor,
+.alt .custom-font .menor {
+	font-size: 25px;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.apDivContainer {
+	position: relative;
+}
+.apDivContainer  .apDiv {
+	position: absolute;
+	z-index: 1;
+}
+.caixas .x {
+	display: inline-block;
+	width: 6.1%;
+	height: 25px;
+}
+
+#apDiv0 {
+	left: 53px;
+	top: 20px;
+	width: 580px;
+	height: 412px;
+}
+#apDiv1 {
+	left: 66px;
+	top: 137px;
+	width: 460px;
+}
+#apDiv2 {
+	left: 127px;
+	top: 162px;
+	width: 395px;
+}
+#apDiv3 {
+	text-indent: 115px;
+	line-height: 21px;
+	left: 43px;
+	top: 187px;
+	width: 494px;
+}
+#apDiv4 {
+	left: 111px;
+	top: 225px;
+	width: 116px;
+}
+#apDiv5, #apDiv6, #apDiv7, #apDiv8 {
+	top: 268px;
+}
+#apDiv5 {
+	left: 242px;
+	width: 102px;
+}
+#apDiv6 {
+	left: 338px;
+	width: 33px;
+}
+#apDiv7 {
+	left: 388px;
+	width: 80px;
+}
+#apDiv8 {
+	left: 485px;
+	width: 52px;
+}
+.alt #apDiv1 {
+	top: 130px;
+}
+.alt #apDiv2 {
+	top: 156px;
+}
+.alt #apDiv3 {
+	top: 183px;
+}
+.alt #apDiv4 {
+	top: 219px;
+}
+.alt #apDiv5, .alt #apDiv6, .alt #apDiv7, .alt #apDiv8 {
+	top: 262px;
+}
+.alt #apDiv6 {
+	width: 31px;
+}
+#apDiv9 {
+	left: 132px;
+	top: 121px;
+	width: 37px;
+}
+#apDiv10 {
+	left: 202px;
+	top: 96px;
+	width: 291px;
+}
+#apDiv11 {
+	left: 168px;
+	top: 171px;
+	width: 331px;
+}
+#apDiv12 {
+	left: 152px;
+	top: 207px;
+	width: 347px;
+	height: 20px;
+}
+#apDiv13, #apDiv14 {
+	top: 242px;
+}
+#apDiv13 {
+	left: 144px;
+	width: 112px;
+}
+#apDiv14 {
+	left: 337px;
+	width: 87px;
+}
+#apDiv15 {
+	left: 170px;
+	top: 277px;
+	width: 329px;
+}
+#apDiv16 {
+	left: 118px;
+	top: 313px;
+	width: 381px;
+}

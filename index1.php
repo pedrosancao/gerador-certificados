@@ -1,311 +1,175 @@
-<?php
-if (
-	$_POST["user"]=="Pedro" And
-		sha1($_POST["pass"])=="HASH" Or
-	$_POST["user"]=="Chefia" And
-		sha1($_POST["pass"])=="HASH"){
-echo "
-<html>\n
-\n
-<head>\n
-\n
-<title>Gerador de Certificados - Grupo Escoteiro Aragua&ccedil;&uacute;</title>\n
-\n
-<style type=\"text/css\">\n
-  .label{font-size:8pt;}\n
-</style>\n
-\n
-<script language=\"javascript\">\n
-function data(){\n
-var di = document.form1.dia.value;\n
-document.form2.day.value = di;\n
-\n
-var me = document.form1.mes.value;\n
-document.form2.month.value = me;\n
-\n
-var an = document.form1.ano.value;\n
-document.form2.year.value = an;\n
-};\n
-</script>\n
-\n
-</head>\n
-\n
-<body bgcolor=\"#CCCCCC\">\n
-\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\"><tr><td>\n
-<form action=\"";
-if ($_POST["nav"]=="ff"){
-echo "frente.php?nav=0";
-}
-elseif ($_POST["nav"]=="ie"){
-echo "frente.php?nav=1";
-}
-else {
-echo "frente.php?nav=2";
-};
-echo "\" method=\"post\" name=\"form1\" target=\"_blank\">\n
-<input type=\"hidden\" name=\"user\" id=\"user\" value=\"";
-echo $_POST["user"];
-echo "\">\n
-<input type=\"hidden\" name=\"pass\" id=\"pass\" value=\"";
-echo $_POST["pass"];
-echo "\">\n
-<fieldset>\n
-<legend style=\"color:#FFFFFF;\">Frente&nbsp;</legend>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n
-  <tr class=\"label\">\n
-    <td>Ramo</td>\n
-    <td>Nome</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input name=\"ramo\" type=\"text\" id=\"ramo\" size=\"10\" maxlength=\"10\" title=\"ex.: Escoteiro, Guia, Lobinha, etc\"></td>\n
-    <td><input name=\"name\" type=\"text\" id=\"name\" size=\"40\" maxlength=\"40\"></td>\n
-  </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Registro UEB</td>\n
-    <td>Grupo Escoteiro (nome e numeral)</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input name=\"ueb\" type=\"text\" id=\"ueb\" size=\"10\" maxlength=\"8\" title=\"ex.: 123456-7\"></td>\n
-    <td><input name=\"grupo\" type=\"text\" id=\"grupo\" size=\"40\" maxlength=\"40\" value=\"Aragua&ccedil;&uacute; - 172&ordm;\"></td>\n
-  </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Certificado</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input name=\"cert\" type=\"text\" id=\"cert\" size=\"54\" title=\"Promessa / Progress&atilde;o / Gradua&ccedil;&atilde;o / Especialidade / Anos de Atividade / Participa&ccedil;&atilde;o em evento\"></td>\n
-  </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Cidade</td>\n
-    <td>&nbsp;</td>\n
-    <td>Data</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input type=\"text\" name=\"city\" id=\"city\" size=\"22\" value=\"S&atilde;o Paulo\"></td>\n
-    <td>&nbsp;</td>\n
-    <td><select name=\"dia\" id=\"dia\" onChange=\"data()\">\n";
-
-$dias = array (
-  "&nbsp;",
-  "01", "02", "03", "04", "05", "06", "07", "08", "09", 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-);
-foreach ($dias as $dia)
-echo "<option value=\"$dia\">$dia</option>\n";
-echo "\n
-</select><select name=\"mes\" id=\"mes\" onChange=\"data()\">\n
-\n";
-$meses = array (
-  "&nbsp;",
-  "Janeiro",
-  "Fevereiro",
-  "Mar&ccedil;o",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-);
-foreach ($meses as $mes)
-echo "<option value=\"$mes\">$mes</option>\n";
-echo "\n
-</select><select name=\"ano\" id=\"ano\" onChange=\"data()\">\n
-\n";
-$anos = array (
-  "&nbsp;",
-  2000,
-  2001,
-  2002,
-  2003,
-  2004,
-  2005,
-  2006,
-  2007,
-  2008,
-  2009,
-  2010,
-  2011,
-  2012,
-  2013,
-  2014,
-  2015,
-  2016,
-  2017,
-  2019,
-  2020,
-);
-foreach ($anos as $ano)
-echo "<option value=\"$ano\">$ano</option>\n";
-echo "\n
-</select>\n
-    </td>\n
-  </tr>\n
-</table>\n
-<div align=\"center\" style=\"margin-top:15px;\">\n
-<input name=\"vai\" type=\"submit\" id=\"vai\" value=\"Imprimir\">\n
-&nbsp;\n
-<input type=\"reset\" name=\"cls\" id=\"cls\" value=\"Limpar\">\n
-</div>\n
-</fieldset>\n
-</form>\n
-\n
-<form action=\"";
-if ($_POST["nav"]=="ff"){
-echo "verso.php?nav=0";
-}
-elseif ($_POST["nav"]=="ie"){
-echo "verso.php?nav=1";
-}
-else {
-echo "verso.php?nav=2";
-};
-echo "\" method=\"post\" name=\"form2\" target=\"_blank\">\n
-<input type=\"hidden\" name=\"day\" id=\"day\">\n
-<input type=\"hidden\" name=\"month\" id=\"month\">\n
-<input type=\"hidden\" name=\"year\" id=\"year\">\n
-<input type=\"hidden\" name=\"user\" id=\"user\" value=\"";
-echo $_POST["user"];
-echo "\">\n
-<input type=\"hidden\" name=\"pass\" id=\"pass\" value=\"";
-echo $_POST["pass"];
-echo "\">\n
-<fieldset>\n
-<legend style=\"color:#FFFFFF;\">Verso&nbsp;</legend>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n
-  <tr class=\"label\">\n
-    <td>Examinador</td>\n
-    </tr>\n
-  <tr>\n
-    <td><input name=\"exam\" type=\"text\" id=\"exam\" size=\"54\" maxlength=\"54\"></td>\n
-    </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Endere&ccedil;o</td>\n
-    <td>Telefone</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input name=\"end\" type=\"text\" id=\"end\" size=\"36\"></td>\n
-    <td><input name=\"tel\" type=\"text\" id=\"tel\" size=\"13\" maxlength=\"13\" title=\"ex.: (12)3456-7890\"></td>\n
-  </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Qualifica&ccedil;&atilde;o</td>\n
-  </tr>\n
-  <tr>\n
-    <td><input name=\"qual\" type=\"text\" id=\"qual\" size=\"54\"></td>\n
-    </tr>\n
-</table>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin-top:5px;\">\n
-  <tr class=\"label\">\n
-    <td>Observa&ccedil;&otilde;es</td>\n
-    </tr>\n
-  <tr>\n
-    <td><input type=\"text\" name=\"obs\" id=\"obs\" size=\"54\"></td>\n
-    </tr>\n
-</table>\n
-<fieldset title=\"Preencher apenas nos certificados de Especialidades\" style=\"margin-top:8px;\">\n
-<legend style=\"color:#FFFFFF;\" title=\"Preencher apenas nos certificados de Especialidades\">Especialidade&nbsp;</legend>\n
-<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n
-  <tr class=\"label\">\n
-    <td>N&iacute;vel</td>\n
-  </tr>\n
-  <tr>\n
-    <td>\n
-      <select name=\"nvl\" id=\"nvl\">\n
-        <option value=\"&nbsp;\">&nbsp;</option>\n
-        <option value=\"1\">1</option>\n
-        <option value=\"2\">2</option>\n
-        <option value=\"3\">3</option>\n
-      </select>\n
-    </td>\n
-  </tr>\n
-  <tr>\n
-    <td align=\"center\">\n
-    <div style=\"margin-top:10px;\">\n
-      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"label\" width=\"322\">\n
-	  \n";
-
-$nums = array ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,);
-echo "<tr>\n<td>Item</td>\n";
-$num1 = array_slice($nums,0,12);
-foreach ($num1 as $p1)
-echo "<td align=\"center\">$p1</td>\n";
-echo "</tr>\n<tr>\n<td align=\"left\">Sim</td>\n";
-foreach ($num1 as $p1)
-echo "<td align=\"center\"><input type=\"radio\" name=\"item$p1\" value=\"sim\"></td>\n";
-echo "</tr>\n<tr>\n<td align=\"left\">N&atilde;o</td>\n";
-foreach ($num1 as $p1)
-echo "<td align=\"center\"><input type=\"radio\" name=\"item$p1\" value=\"nao\" checked></td>\n";
-echo "</tr>";
-
-echo "<tr height=\"25\" valign=\"bottom\">\n<td>Item</td>\n";
-$num2 = array_slice($nums,12,12);
-foreach ($num2 as $p1)
-echo "<td align=\"center\">$p1</td>\n";
-echo "</tr>\n<tr>\n<td align=\"left\">Sim</td>\n";
-foreach ($num2 as $p1)
-echo "<td align=\"center\"><input type=\"radio\" name=\"item$p1\" value=\"sim\"></td>\n";
-echo "</tr>\n<tr>\n<td align=\"left\">N&atilde;o</td>\n";
-foreach ($num2 as $p1)
-echo "<td align=\"center\"><input type=\"radio\" name=\"item$p1\" value=\"nao\" checked></td>\n";
-echo "</tr>";
-
-echo "\n
-      </table>\n
-    </div>\n
-    </td>\n
-  </tr>\n
-</table>\n
-</fieldset>\n
-<div align=\"center\" style=\"margin-top:12px;\">\n
-<input name=\"vai2\" type=\"submit\" id=\"vai2\" value=\"Imprimir\" onClick=\"data()\">\n
-&nbsp;\n
-<input type=\"reset\" name=\"cls2\" id=\"cls2\" value=\"Limpar\">\n
-</div>\n
-</fieldset>\n
-</form>\n
-</td>\n
-</tr>\n
-<tr>\n
-<td align=\"center\">\n
-<input type=\"button\" value=\"Voltar para o Site\" onClick=\"window.location='http://www.gearaguacu.com.br'\">
-</td>\n
-</tr>\n
-</table>\n
-\n
-</body>\n
-\n
-</html>\n";
-}
-else {
-echo "
-<html>\n
-\n
-<head>\n
-<title>Gerador de Certificados por PedroH.</title>\n
-<META HTTP-EQUIV=\"Refresh\" CONTENT=\"1 ; URL= index.html\">\n
-<style type=\"text/css\">\n
-  .label{font-size:8pt;}\n
-</style>\n
-</head>\n
-\n
-<body bgcolor=\"#CCCCCC\">\n
-\n
-Senha incorreta\n
-\n
-</body>\n
-\n
-</html>";
-};
+﻿<?php
+include_once 'function.php';
+login();
 ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gerador de Certificados</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="resources/default.css">
+		<script type="text/javascript">
+function data(){
+	document.form2.dia.value = document.form1.dia.value;
+	document.form2.mes.value = document.form1.mes.value;
+	document.form2.ano.value = document.form1.ano.value;
+};
+function marcarTodos() {
+	var checkboxes = document.getElementsByName('itens[]');
+	var i;
+	for (i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].checked = true;
+	}
+}
+		</script>
+	</head>
+
+	<body>
+	    <div class="container">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Frente</h3>
+				</div>
+				<div class="panel-body container-fluid">
+					<form action="frente.php" method="post" name="form1" target="_blank">
+						<input type="hidden" name="user" id="user" value="<?php echo isset($_POST["user"]) ? $_POST["user"] : ''; ?>">
+						<input type="hidden" name="pass" id="pass" value="<?php echo isset($_POST["pass"]) ? $_POST["pass"] : ''; ?>">
+						<div class="form-group col-sm-3">
+							<label for="ramo">Ramo</label>
+							<input name="ramo" type="text" id="ramo" class="form-control" size="10" maxlength="10" title="ex.: Escoteiro, Guia, Lobinha, etc" value=""/>
+						</div>
+						<div class="form-group col-sm-9">
+							<label for="name">Nome</label>
+							<input name="name" type="text" id="name" class="form-control" size="40" maxlength="40" value=""/>
+						</div>
+						<div class="form-group col-sm-3">
+							<label for="ueb">Registro UEB</label>
+							<input name="ueb" type="text" id="ueb" class="form-control" size="8" maxlength="8" title="ex.: 123456-7" value=""/>
+						</div>
+						<div class="form-group col-sm-9">
+							<label for="grupo">Grupo Escoteiro (nome e numeral)</label>
+							<input name="grupo" type="text" id="grupo" class="form-control" size="40" maxlength="40" value=""/>
+						</div>
+						<div class="form-group col-sm-12">
+							<label for="cert">Certificado</label>
+							<input name="cert" type="text" id="cert" class="form-control" size="54" title="Promessa / Progressão / Graduação / Especialidade / Anos de Atividade / Participação em evento" value=""/>
+						</div>
+						<div class="form-group col-sm-5">
+							<label for="city">Cidade</label>
+							<input type="text" name="city" id="city" class="form-control" size="22" value="São Paulo"/>
+						</div>
+						<div class="form-group col-sm-2">
+							<label for="dia">Dia</label>
+							<select name="dia" id="dia" class="form-control" onchange="data()">
+								<option value="">&mdash;</option><?php
+								foreach (range(1, 31) as $dia) {
+									printf('<option value="%1$s">%1$s</option>', str_pad($dia, 2, 0, STR_PAD_LEFT));
+								} ?>
+
+							</select>
+						</div>
+						<div class="form-group col-sm-3">
+							<label for="mes">Mês</label>
+							<select name="mes" id="mes" class="form-control" onchange="data()">
+								<option value="">&mdash;</option><?php
+								foreach (meses() as $nMes => $mes) {
+									printf('<option value="%1$s">%2$s</option>', $nMes, $mes);
+								} ?>
+
+							</select>
+						</div>
+						<div class="form-group col-sm-2">
+							<label for="ano">Ano</label>
+							<select name="ano" id="ano" class="form-control" onchange="data()">
+								<option value="">&mdash;</option><?php
+								foreach (range(2000, 2020) as $ano) {
+									printf('<option value="%1$s">%1$s</option>', $ano);
+								} ?>
+
+							</select>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary">Imprimir</button>
+							<button type="reset" class="btn btn-default">Limpar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Verso</h3>
+				</div>
+				<div class="panel-body container-fluid">
+					<form action="verso.php" method="post" name="form2" target="_blank">
+						<input type="hidden" name="user" id="user" value="<?php echo isset($_POST["user"]) ? $_POST["user"] : ''; ?>">
+						<input type="hidden" name="pass" id="pass" value="<?php echo isset($_POST["pass"]) ? $_POST["pass"] : ''; ?>">
+						<input type="hidden" name="dia" id="dia">
+						<input type="hidden" name="mes" id="mes">
+						<input type="hidden" name="ano" id="ano">
+						<div class="form-group col-sm-12">
+							<label for="exam">Examinador</label>
+							<input name="exam" type="text" id="exam" class="form-control" size="54" maxlength="54" value=""/>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="end">Endereço</label>
+							<input name="end" type="text" id="end" class="form-control" size="36" value=""/>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="tel">Telefone</label>
+							<input name="tel" type="text" id="tel" class="form-control" size="13" maxlength="13" title="ex.: (12)3456-7890" value=""/>
+						</div>
+						<div class="form-group col-sm-12">
+							<label for="qual">Qualificação</label>
+							<input name="qual" type="text" id="qual" class="form-control" size="54" value=""/>
+						</div>
+						<div class="form-group col-sm-12">
+							<label for="obs">Observações</label>
+							<input name="obs" type="text" id="obs" class="form-control" size="54" value=""/>
+						</div>
+						<div class="clearfix">&nbsp;</div>
+						<fieldset title="Preencher apenas nos certificados de Especialidades">
+							<legend>Especialidade</legend>
+							<div class="form-group col-sm-2">
+								<label for="nvl">Nível</label>
+								<select name="nvl" id="nvl" class="form-control">
+									<option value="">&mdash;</option><?php
+									foreach (range(1, 3) as $n) {
+										printf('<option value="%1$s">%1$s</option>', $n);
+									} ?>
+
+								</select>
+							</div>
+							<div class="form-group col-sm-12">
+								<label>Items <button type="button" class="btn btn-default btn-xs" onclick="marcarTodos()">Marcar Todos</button></label>
+								<div class="checkbox-group"><?php
+								$colunas = 6; # editar aqui
+								$qtd = 24 / $colunas;
+								$qtdInt = ceil($qtd);
+								$tamanhoColuna = floor(12 / $colunas);
+								for ($i = 0; $i < $colunas; $i++) {
+									printf('<div class="col-sm-%u">', $tamanhoColuna);
+									$limite =  ($i + 1) * $qtdInt - floor(($i + 1) * ($qtdInt - $qtd));
+									for ($item = $i * $qtdInt + 1; $item <= $limite; $item++) { ?>
+
+										<div class="checkbox">
+											<label>
+												<input name="itens[]" type="checkbox" value="<?php echo $item; ?>"/> Item <?php echo $item; ?>
+											</label>
+										</div><?php
+									}
+									echo '</div>';
+								} ?>
+
+								</div>
+							</div>
+						</fieldset>
+						<div class="text-center">
+							<button type="submit" class="btn btn-primary" onclick="data()">Imprimir</button>
+							<button type="reset" class="btn btn-default">Limpar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
