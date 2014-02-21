@@ -1,9 +1,7 @@
 ﻿<?php
-if (
-	$_POST["user"]=="Pedro" And
-		sha1($_POST["pass"])=="HASH" Or
-	$_POST["user"]=="Chefia" And
-		sha1($_POST["pass"])=="HASH"){
+include_once 'login.php';
+login();
+
 echo "
 <html>\n
 \n
@@ -288,24 +286,3 @@ echo "\n
 \n
 </html>\n";
 }
-else {
-echo "
-<html>\n
-\n
-<head>\n
-<title>Gerador de Certificados por PedroH.</title>\n
-<META HTTP-EQUIV=\"Refresh\" CONTENT=\"1 ; URL= index.html\">\n
-<style type=\"text/css\">\n
-  .label{font-size:8pt;}\n
-</style>\n
-</head>\n
-\n
-<body bgcolor=\"#CCCCCC\">\n
-\n
-Senha incorreta\n
-\n
-</body>\n
-\n
-</html>";
-};
-?>
