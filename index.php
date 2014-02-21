@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+/**
+ * @author		Pedro Sanção <pedro@sancao.co>
+ * @copyright	Copyright (c) 2014, Pedro Sanção
+ * @license		MIT License
+ */
+ 
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Gerador de Certificados</title>

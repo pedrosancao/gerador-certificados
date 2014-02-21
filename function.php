@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * @author		Pedro Sanção <pedro@sancao.co>
+ * @copyright	Copyright (c) 2014, Pedro Sanção
+ * @license		MIT License
+ */
+
 # utilizei para armazenamento de senhas a criptografia hash+salt, para diminuir os riscos de recuperação de senhas através de força bruta
 # como exemplo, meu usuário é "exemplo" e minha senha "123456"
 # gero a hash com geraHash() e salvo o resultado no array em getHash();
