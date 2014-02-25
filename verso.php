@@ -1,7 +1,7 @@
 ﻿<?php
 
 /**
- * @author		Pedro Sanção <pedro@sancao.co>
+ * @author		Pedro Sanção <pedro at sancao dot co>
  * @copyright	Copyright (c) 2014, Pedro Sanção
  * @license		MIT License
  */
