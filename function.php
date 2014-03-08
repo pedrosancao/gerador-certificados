@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @author		Pedro Sanção <pedro at sancao dot co>
- * @copyright	Copyright (c) 2014, Pedro Sanção
- * @license		MIT License
+ * @author     Pedro Sanção <pedro at sancao dot co>
+ * @copyright  Copyright (c) 2014, Pedro Sanção
+ * @license    MIT License
  */
 
 # utilizei para armazenamento de senhas a criptografia hash+salt, para diminuir os riscos de recuperação de senhas através de força bruta
@@ -40,7 +40,7 @@ function login() {
 		$permitido = verificaUsuario($_POST['user'], $_POST['pass']);
 	}
 	if (!$permitido) {
-		header('Location: index.html');
+		header('Location: index.php');
 	}
 }
 

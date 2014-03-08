@@ -1,9 +1,9 @@
 ﻿<?php
 
 /**
- * @author		Pedro Sanção <pedro at sancao dot co>
- * @copyright	Copyright (c) 2014, Pedro Sanção
- * @license		MIT License
+ * @author     Pedro Sanção <pedro at sancao dot co>
+ * @copyright  Copyright (c) 2014, Pedro Sanção
+ * @license    MIT License
  */
 
 include_once 'function.php';
