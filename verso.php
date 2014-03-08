@@ -47,8 +47,10 @@ login();
 			</div>
 		</div>
 		<script type="text/javascript">
-		window.print();
-		window.setTimeout(function(){window.close()}, 100);
+		document.addEventListener('load', function(){
+			window.print();
+			window.setTimeout(function(){window.close()}, 100);
+		}, true);
 		</script>
 	</body>
 </html>
